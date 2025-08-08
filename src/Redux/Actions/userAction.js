@@ -4,3 +4,10 @@ export const updateUserData = (payload) => {
         payload
     }
 }
+
+export const logoutUser = (payload) => {
+    return{
+        type: "USER_LOGOUT",
+        payload,
+    }
+}

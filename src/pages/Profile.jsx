@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux"
-import { updateUserData } from "../Redux/Actions/userAction"
+import { logoutUser, updateUserData } from "../Redux/Actions/userAction"
 
 const Profile = () => {
     const dispatch = useDispatch()
@@ -16,12 +16,21 @@ const Profile = () => {
         //after action, dispatch data to store.
         dispatch(dispatchObject)
     } 
+    const handleUserLogout = () => {
+        const dispatchLogout = logoutUser()
+        dispatch(dispatchLogout);
+
+    }
     return (
         <div className="container mx-auto">
             <h1>User Profile</h1>
 
             <div>
                 <button className="px-2 py-2 rounded-md bg-blue-600 text-white" onClick={handleUser}>Set User</button>
+            </div>
+            <hr />
+             <div>
+                <button className="px-2 py-2 rounded-md bg-red-600 text-white" onClick={handleUserLogout}>Logout</button>
             </div>
         </div>
     )
