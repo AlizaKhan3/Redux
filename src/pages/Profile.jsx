@@ -19,8 +19,8 @@ const Profile = () => {
     const handleUserLogout = () => {
         const dispatchLogout = logoutUser()
         dispatch(dispatchLogout);
-
     }
+    
     return (
         <div className="container mx-auto">
             <h1>User Profile</h1>
